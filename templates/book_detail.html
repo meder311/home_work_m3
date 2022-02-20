@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <center>
+       <h1>{{ books.title }}</h1>
+        <p>{{ books.description }}</p>
+        <img src="{{ books.image.url }}" alt="">
+        <p>{{ books.author }}</p>
+        <p>{{ books.created_date }}</p>
+        <p>{{ books.updated_date }}</p>
+
+        <h3>Comments</h3>
+
+        <ul>{% for i in  books.books_comment.all %}
+                <li>
+                {{ i.text }}
+                </li>
+                {{ i.created_date }}
+            {% endfor %}
+        </ul>
+    </center>
+</body>
+</html>
